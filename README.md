@@ -1,4 +1,4 @@
-##1. Search function to check if the value is in the list.
+1. Search function to check if the value is in the list.
 ###### Strictly so that the list is sorted !!!!
 ###### Otherwise, this function does not work !!!!
 
