@@ -1,7 +1,5 @@
 package binSearch
 
-import "fmt"
-
 //BinSearch
 type BinSearch interface {
 	CheckDataStr(int, int, DataStr) bool
@@ -29,7 +27,7 @@ func (s *binSearch) CheckDataStr(l, r int, params DataStr) bool {
 	if params.List[m] < params.Data {
 		return s.CheckDataStr(m+1, r, params)
 	} else {
-		return s.CheckDataStr(l, r-1, params)
+		return s.CheckDataStr(l, m-1, params)
 	}
 }
 
@@ -44,7 +42,7 @@ func (s *binSearch) CheckDataInt(l, r int, params DataInt) bool {
 	if params.List[m] < params.Data {
 		return s.CheckDataInt(m+1, r, params)
 	} else {
-		return s.CheckDataInt(l, r-1, params)
+		return s.CheckDataInt(l, m-1, params)
 	}
 }
 
@@ -57,22 +55,4 @@ type DataStr struct {
 type DataInt struct {
 	List []int
 	Data int
-}
-
-
-func main() {
-	var (
-		a      = DataInt{}
-		search = NewBinSearch()
-		b      = DataStr{}
-	)
-	a.List = []int{1, 2, 3, 4}
-	a.Data = 6
-	result := search.CheckDataInt(0, len(a.List)-1, a)
-	fmt.Println(result)
-
-	b.List = []string{"A", "B", "E", "F"}
-	b.Data = "Parviz"
-	result = search.CheckDataStr(0, len(b.List)-1, b)
-	fmt.Println(result)
 }
