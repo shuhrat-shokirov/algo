@@ -2,7 +2,7 @@
 ###### Strictly so that the list is sorted !!!!
 ###### Otherwise, this function does not work !!!!
 
-```
+```go
 func main() {
 	var (
 		a      = DataInt{}
